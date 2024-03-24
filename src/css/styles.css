@@ -72,3 +72,25 @@
 .feedback-form button[type='submit']:hover {
   background-color: #6c8cff;
 }
+
+/* Task 1 styles */
+
+ul,
+ol {
+  list-style: none;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  width: calc(33.33% - 20px);
+  margin: 10px;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+}
