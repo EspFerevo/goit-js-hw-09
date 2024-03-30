@@ -1,6 +1,2 @@
-import"./assets/styles-efcbad89.js";//!
-document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".feedback-form"),t=JSON.parse(localStorage.getItem("feedback-form-state"))||{};//!
-t.email&&(e.elements.email.value=t.email),t.message&&(e.elements.message.value=t.message);//!
-e.addEventListener("input",function(a){t[a.target.name]=a.target.value.trim(),localStorage.setItem("feedback-form-state",JSON.stringify(t))});//!
-e.addEventListener("submit",function(a){a.preventDefault();const m=e.elements.email.value.trim(),s=e.elements.message.value.trim();m&&s?(console.log({email:m,message:s}),localStorage.removeItem("feedback-form-state"),e.reset()):alert("!!!!!")})});
+import"./assets/styles-efcbad89.js";document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".feedback-form"),a=JSON.parse(localStorage.getItem("feedback-form-state"))||{};try{const t=JSON.parse("Well, this is awkward")}catch(t){console.error(t.message)}a.email&&(e.elements.email.value=a.email),a.message&&(e.elements.message.value=a.message),e.addEventListener("input",function(t){a[t.target.name]=t.target.value.trim(),localStorage.setItem("feedback-form-state",JSON.stringify(a))}),e.addEventListener("submit",function(t){t.preventDefault();const s=e.elements.email.value.trim(),m=e.elements.message.value.trim();s&&m?(console.log({email:s,message:m}),localStorage.removeItem("feedback-form-state"),e.reset()):alert("Будь ласка, заповніть поля електронної пошти та повідомлення.")})});
 //# sourceMappingURL=commonHelpers2.js.map
