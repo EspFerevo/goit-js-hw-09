@@ -1,12 +1,16 @@
 'use strict';
 
-//!
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.querySelector('.feedback-form');
   const feedbackData =
     JSON.parse(localStorage.getItem('feedback-form-state')) || {};
 
-  //!
+  try {
+    const data = JSON.parse('Well, this is awkward');
+  } catch (error) {
+    console.error(error.message);
+  }
+
   if (feedbackData.email) {
     form.elements.email.value = feedbackData.email;
   }
@@ -14,13 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
     form.elements.message.value = feedbackData.message;
   }
 
-  //!
   form.addEventListener('input', function (event) {
     feedbackData[event.target.name] = event.target.value.trim();
     localStorage.setItem('feedback-form-state', JSON.stringify(feedbackData));
   });
 
-  //!
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
       localStorage.removeItem('feedback-form-state');
       form.reset();
     } else {
-      alert('!!!!!');
+      alert('Будь ласка, заповніть поля електронної пошти та повідомлення.');
     }
   });
 });

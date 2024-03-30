@@ -1,9 +1,7 @@
 'use strict';
-//! Copy
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-//! Gallery
 document.addEventListener('DOMContentLoaded', function () {
   const images = [
     {
@@ -71,10 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   ];
 
-  //!
-  const galleryContainer = document.getElementById('gallery');
-
-  //!
+  const galleryContainer = document.querySelector('.gallery');
 
   images.forEach(image => {
     const listItem = document.createElement('li');
@@ -94,12 +89,8 @@ document.addEventListener('DOMContentLoaded', function () {
     galleryContainer.appendChild(listItem);
   });
 
-  //!
   const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionDelay: 250,
   });
-
-  //!
-  lightbox.open();
 });
